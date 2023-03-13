@@ -8,30 +8,25 @@ import Contos from './Contos';
 import Contos from './Curiosidades';
 import curiosidades from './Curiosidades';
 
-function HomeScreen({navigation}) {
+function Contos({navigation}) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Contos")}></TouchableOpacity>
       <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Curiosidades")}></TouchableOpacity>
+      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Home")}></TouchableOpacity>
     </View>
   );
 }
 
-const Stack = createNativeStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Contos" component={Contos} />
-        <Stack.Screen name="Curiosidades" component={curiosidades} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+//const Stack = createNativeStackNavigator();
 
 const styles = StyleSheet.create({
+
+  Button1:{
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+  },
 
   container: {
     flex: 1,
@@ -39,11 +34,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
 
-  Button1:{
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-  }
+
 })
 
-export default App;
+export default Contos;
