@@ -2,21 +2,22 @@
 
 import * as React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Contos from './Contos';
-import Contos from './Curiosidades';
-import curiosidades from './Curiosidades';
 
 function Contos({navigation}) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Contos")}></TouchableOpacity>
-      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Curiosidades")}></TouchableOpacity>
-      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Home")}></TouchableOpacity>
+      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Curiosidades")}>
+        <Text>Curiosidades</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Home")}>
+        <Text>Home</Text>
+      </TouchableOpacity>
     </View>
   );
 }
+
+const Stack = createNativeStackNavigator();
 
 //const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#DDDDDD',
     padding: 10,
+    marginTop: 25,
   },
 
   container: {

@@ -5,14 +5,17 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Contos from './Contos';
-import Contos from './Curiosidades';
-import curiosidades from './Curiosidades';
+import Curiosidades from './Curiosidades';
 
 function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Contos")}></TouchableOpacity>
-      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Curiosidades")}></TouchableOpacity>
+      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Contos")}>
+        <Text>Contos</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.Button1} onPress={()=> navigation.navigate("Curiosidades")}>
+        <Text>Curiosidades</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -25,7 +28,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Contos" component={Contos} />
-        <Stack.Screen name="Curiosidades" component={curiosidades} />
+        <Stack.Screen name="Curiosidades" component={Curiosidades} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -43,6 +46,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#DDDDDD',
     padding: 10,
+    marginTop: 25,
   }
 })
 
